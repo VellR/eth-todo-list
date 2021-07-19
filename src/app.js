@@ -5,6 +5,7 @@ App = {
     await App.loadWeb3()
     await App.loadAccount()
     await App.loadContract()
+    await App.render()
   },
 
   loadWeb3: async () => {
@@ -40,7 +41,7 @@ App = {
   },
 
   loadAccount: async () => {
-    App.account = web3.eth.getAccounts().then(function(result){ return result[0]})
+    App.account = web3.eth.accounts[0]
   },
 
   loadContract: async () => {
